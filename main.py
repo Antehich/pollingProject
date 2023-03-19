@@ -81,7 +81,7 @@ async def append_data(data):
                                                         }
 
     request = service.spreadsheets().values().append(spreadsheetId=spreadsheet_id, range=range_, valueInputOption=value_input_option, insertDataOption=insert_data_option, body=value_range_body)
-
+    response = request.execute()
 
 @form_router.message(Command("start"))
 async def command_start(message: Message, state: FSMContext) -> None:
